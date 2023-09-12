@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import SoundLibrary from './SoundLibrary';
+import { Route,Link, Routes, BrowserRouter} from 'react-router-dom';
 
 function App() {
   return (
@@ -9,7 +11,12 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>Sam was here</p>
+        <BrowserRouter>
+          <Routes>
+            <Route exact path='/SoundLibrary' Component={SoundLibrary}/>
+          </Routes>
+        </BrowserRouter>
+        <a href='/SoundLibrary'>Sound Library</a>
         <a
           className="App-link"
           href="https://reactjs.org"
