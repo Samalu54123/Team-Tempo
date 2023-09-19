@@ -1,33 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-import SoundLibrary from './SoundLibrary';
-import { Route,Link, Routes, BrowserRouter} from 'react-router-dom';
+import Navbar from "./Navbar"
+import Project from "./Pages/Project"
+import Home from "./Pages/Home"
+import About from "./Pages/About"
+import SoundLibrary from "./SoundLibrary";
+import { Route, Routes } from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <BrowserRouter>
-          <Routes>
-            <Route exact path='/SoundLibrary' Component={SoundLibrary}/>
-          </Routes>
-        </BrowserRouter>
-        <a href='/SoundLibrary'>Sound Library</a>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Project" element={<Project />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/SoundLibrary" element={<SoundLibrary />} /> 
+        </Routes>
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
