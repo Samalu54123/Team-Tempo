@@ -4,6 +4,7 @@ import Home from "./Pages/Home"
 import About from "./Pages/About"
 import SoundLibrary from "./SoundLibrary";
 import Track from "./Pages/Track";
+import Timeline from "./TimelineComponent";
 import { Route, Routes } from "react-router-dom"
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/Project" element={<Project />} />
           <Route path="/About" element={<About />} />
           <Route path="/SoundLibrary" element={<SoundLibrary />} /> 
+          <Route path="/Timeline" element={<Timeline />} /> 
           <Route path="/Track" element={<Track />} /> 
         </Routes>
       </div>

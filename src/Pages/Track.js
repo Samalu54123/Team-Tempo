@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Howl } from 'howler';
 import SoundLibrary from '../SoundLibrary'; // Import the SoundLibrary component
+import Timeline from '../TimelineComponent';
 
 class Track extends Component {
   render() {
@@ -8,7 +9,6 @@ class Track extends Component {
       <div className="Track">
         {/* Button to toggle the SoundLibrary dropdown */}
         <button onClick={this.handleDropdownToggle}>Open Sound Library</button>
-
         {/* SoundLibrary dropdown */}
         {this.state.isDropdownOpen && (
           <div>
