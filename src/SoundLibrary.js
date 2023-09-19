@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import react,{Component} from 'react';
 import { Howl, Howler } from 'howler';
 import A3 from "./Test sound/a3.wav";
 import B3 from "./Test sound/b3.wav";
