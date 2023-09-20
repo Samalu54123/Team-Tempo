@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Howl, Howler } from 'howler';
 import * as Tone from 'tone';
-import SoundLibrary from '../SoundLibrary'; // Import your SoundLibrary component
+import SoundLibrary from '../SoundLibrary';
 
 class Track extends Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class Track extends Component {
     this.soundInstances = [];
   
     // Define the delay interval between clip playback (in milliseconds)
-    const delayInterval = 0; // 1 second (adjust as needed)
+    const delayInterval = 0;
   
     // Function to play a clip with a delay
     const playClipWithDelay = (index) => {
@@ -44,7 +44,6 @@ class Track extends Component {
           src: [clip.sound],
           volume: 1.0, // Adjust volume as needed
           onend: () => {
-            // Handle the end of playback if needed
             setTimeout(() => {
               // Play the next clip with the next index after the delay
               playClipWithDelay(index + 1);
@@ -54,13 +53,11 @@ class Track extends Component {
   
         // Add the sound instance to the array
         this.soundInstances.push(sound);
-  
-        // Start playback
+
         sound.play();
       }
     };
-  
-    // Start playing the first clip
+
     playClipWithDelay(0);
   };
   
@@ -75,10 +72,8 @@ class Track extends Component {
         <button onClick={this.playTimeline}>Play Timeline</button>
         <p>Playback Position: {playbackPosition.toFixed(2)} seconds</p>
 
-        {/* Render the SoundLibrary component for adding clips */}
         <SoundLibrary addClipToTimeline={this.addClipToTimeline} />
 
-        {/* Display the added clips on the timeline */}
         <h3>Timeline Clips</h3>
         {timelineClips.map((clip, index) => (
           <div key={index}>
