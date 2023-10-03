@@ -23,7 +23,7 @@ class Track extends Component {
     }));
   };
 
-  // Handle playback speed change
+  // Handle change playback speed
   handleSpeedChange = (event) => {
     const speed = parseFloat(event.target.value);
     this.setState({ playbackSpeed: speed });
