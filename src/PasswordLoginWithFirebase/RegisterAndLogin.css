@@ -1,0 +1,90 @@
+/* RegisterAndLogin.css */
+
+/* Container for the login and registration form */
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  /* Title for the form */
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Row containing the SignUp and SignIn tabs */
+  .row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Tab styles */
+  .pointer {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin: 0 10px;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text horizontally and vertically */
+    color: #333;
+  }
+  
+  .activeColor {
+    background-color: #007bff;
+    color: #fff;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text horizontally and vertically */
+  }
+  
+  /* Form styles */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  p {
+    margin-top: 10px;
+    cursor: pointer;
+    color: #007bff;
+  }
+  
+  /* Button styles */
+  button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    /* Remove the border-radius property to keep the button rounded */
+    border-radius: 5px;
+  }
+  

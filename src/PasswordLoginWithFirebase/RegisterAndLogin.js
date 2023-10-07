@@ -4,9 +4,9 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
-import Track from "../Pages/Track";
+import { useNavigate } from "react-router-dom";
 import "../styles.css";
+import "./RegisterAndLogin.css"; 
 
 function RegisterAndLogin() {
   const [login, setLogin] = useState(false);
