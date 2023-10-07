@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Howl, Howler } from 'howler';
 import SoundLibrary from '../SoundLibrary';
 import '../Track.css';
+import Navbar from "../Navbar"
 
 class Track extends Component {
   constructor(props) {
@@ -85,43 +86,47 @@ class Track extends Component {
     const { timelineClips, playbackPosition, playbackSpeed } = this.state;
 
     return (
+      
       // Add a div with a class name for styling
-      <div className="track-container">
-        <h2>Timeline</h2>
-        <div className="timeline-header">
-          {/* Playback controls */}
-          <div className="playback-controls">
-            <button onClick={this.playTimeline}>Play Timeline</button>
-          </div>
-          <div className="playback-speed">
-            {/* Playback speed dropdown */}
-            <label className="playback-speed-label">Playback Speed:</label>
-            <select
-              className="playback-speed-select"
-              onChange={this.handleSpeedChange}
-              value={playbackSpeed}
-            >
-              <option value={1.0}>Normal</option>
-              <option value={0.5}>Half Speed</option>
-              <option value={1.5}>1.5x Speed</option>
-              <option value={2.0}>Double Speed</option>
-            </select>
-          </div>
-          <div className="undo-button">
-            {/* Undo button */}
-            <button onClick={this.undoLastClip}>Undo</button>
-          </div>
-        </div>
-
-        <SoundLibrary addClipToTimeline={this.addClipToTimeline} />
-
-        {/* Timeline Clips */}
-        <div className="timeline-clips">
-          {timelineClips.map((clip, index) => (
-            <div key={index} className="timeline-clip">
-              {clip.label}
+      <div>
+        <Navbar />
+        <div className="track-container">
+          <h2>Timeline</h2>
+          <div className="timeline-header">
+            {/* Playback controls */}
+            <div className="playback-controls">
+              <button onClick={this.playTimeline}>Play Timeline</button>
             </div>
-          ))}
+            <div className="playback-speed">
+              {/* Playback speed dropdown */}
+              <label className="playback-speed-label">Playback Speed:</label>
+              <select
+                className="playback-speed-select"
+                onChange={this.handleSpeedChange}
+                value={playbackSpeed}
+              >
+                <option value={1.0}>Normal</option>
+                <option value={0.5}>Half Speed</option>
+                <option value={1.5}>1.5x Speed</option>
+                <option value={2.0}>Double Speed</option>
+              </select>
+            </div>
+            <div className="undo-button">
+              {/* Undo button */}
+              <button onClick={this.undoLastClip}>Undo</button>
+            </div>
+          </div>
+
+          <SoundLibrary addClipToTimeline={this.addClipToTimeline} />
+
+          {/* Timeline Clips */}
+          <div className="timeline-clips">
+            {timelineClips.map((clip, index) => (
+              <div key={index} className="timeline-clip">
+                {clip.label}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );
