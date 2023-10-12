@@ -37,11 +37,6 @@ function HomeScreen() {
                 <li>Record and produce your tracks</li>
               </ul>
             </section>
-            <section className="action-buttons">
-              <button className="primary-button" onClick={handleSignOut}>
-                Sign Out
-              </button>
-            </section>
           </main>
           <footer className="footer">
             <p>&copy; 2023 TeamTempo</p>
