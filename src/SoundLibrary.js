@@ -7,6 +7,7 @@ import C3 from "./Test sound/c3.wav";
 import D3 from "./Test sound/d3.wav";
 import E3 from "./Test sound/e3.wav";
 import F3 from "./Test sound/f3.wav";
+import G3 from "./Test sound/g3.wav";
 
 // Import the sound clips
 const pianoClips = [
@@ -15,7 +16,8 @@ const pianoClips = [
     { sound: C3, label: 'C3' },
     { sound: D3, label: 'D3' },
     { sound: E3, label: 'E3' },
-    { sound: F3, label: 'F3' }
+    { sound: F3, label: 'F3' },
+    {sound: G3, label: 'G3'  }
 ];
 
 class SoundLibrary extends Component {
