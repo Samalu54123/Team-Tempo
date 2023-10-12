@@ -6,7 +6,7 @@ import {
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import "../styles.css";
-import "./RegisterAndLogin.css"; 
+import "./RegisterAndLogin.css";
 
 function RegisterAndLogin() {
   const [login, setLogin] = useState(false);
@@ -51,16 +51,16 @@ function RegisterAndLogin() {
           className={login == false ? "activeColor" : "pointer"}
           onClick={() => setLogin(false)}
         >
-          SignUp
+          Sign Up
         </div>
         <div
           className={login == true ? "activeColor" : "pointer"}
           onClick={() => setLogin(true)}
         >
-          SignIn
+          Sign In
         </div>
       </div>
-      <h1>{login ? "SignIn" : "SignUp"}</h1>
+      <h1>{login ? "Sign In" : "Sign Up"}</h1>
       <form onSubmit={(e) => handleSubmit(e, login ? "signin" : "signup")}>
         <input name="email" placeholder="Email" />
         <br />
@@ -68,7 +68,7 @@ function RegisterAndLogin() {
         <br />
         <p onClick={handleReset}>Forgot Password?</p>
         <br />
-        <button>{login ? "SignIn" : "SignUp"}</button>
+        <button>{login ? "Sign In" : "Sign Up"}</button>
       </form>
     </div>
   );
