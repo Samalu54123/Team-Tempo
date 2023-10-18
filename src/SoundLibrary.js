@@ -8,6 +8,13 @@ import D3 from "./Test sound/d3.wav";
 import E3 from "./Test sound/e3.wav";
 import F3 from "./Test sound/f3.wav";
 import G3 from "./Test sound/g3.wav";
+import BasicTone from "./Test sound/basic_tone.wav";
+import BasicPowerOn from "./Test sound/bass-poweron.wav";
+import BassRolly from "./Test sound/bass-rolly-down.wav";
+import BassSynth from "./Test sound/bass-synth.wav";
+import HardSweep from "./Test sound/hardsweep2.wav";
+import Organ from "./Test sound/organ.wav";
+import Metal from "./Test sound/metal.wav";
 
 // Import the sound clips
 const pianoClips = [
@@ -17,7 +24,14 @@ const pianoClips = [
     { sound: D3, label: 'D3' },
     { sound: E3, label: 'E3' },
     { sound: F3, label: 'F3' },
-    {sound: G3, label: 'G3'  }
+    { sound: G3, label: 'G3' },
+    { sound: BasicTone, label: 'Basic Tone'},
+    { sound: BasicPowerOn, label: 'Basic PowerOn'},
+    { sound: BassRolly, label: 'Bass Rolly'},
+    { sound: BassSynth, label: 'Bass Synth'},
+    { sound: HardSweep, label: 'Hard Sweep'},
+    { sound: Organ, label: 'Organ'},
+    { sound: Metal, label: 'Metal'}
 ];
 
 class SoundLibrary extends Component {
