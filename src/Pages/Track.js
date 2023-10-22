@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Howl, Howler } from 'howler';
 import SoundLibrary from '../SoundLibrary';
 import '../Track.css';
-import Navbar from "../Navbar"
+import Navbar from "../Navbar";
 
 class Track extends Component {
   constructor(props) {
@@ -43,7 +43,7 @@ class Track extends Component {
     this.soundInstances = [];
 
     // Define the delay interval between clip playback (in milliseconds)
-    const delayInterval = 200; // 200 milliseconds (0.2 seconds)
+    const delayInterval = 0; // 200 milliseconds (0.2 seconds)
 
     // Function to play a clip with a delay
     const playClipWithDelay = (index) => {
@@ -81,46 +81,66 @@ class Track extends Component {
     }
   };
 
+  // Handle the drop event within the timeline area
+  handleDropInTimeline = (event) => {
+    event.preventDefault();
+
+    const clipData = event.dataTransfer.getData('clip');
+    const clipSound = JSON.parse(clipData);
+
+    // Add the dropped clip to the timeline
+    this.addClipToTimeline(clipSound);
+  };
+
   render() {
     Howler.volume(1.0); // Set the volume for Howler
     const { timelineClips, playbackPosition, playbackSpeed } = this.state;
 
     return (
-      
-      // Add a div with a class name for styling
       <div>
         <Navbar />
+
         <div className="track-container">
           <h2>Timeline</h2>
+
           <div className="timeline-header">
-            {/* Playback controls */}
-            <div className="playback-controls">
-              <button onClick={this.playTimeline}>Play Timeline</button>
-            </div>
-            <div className="playback-speed">
-              {/* Playback speed dropdown */}
-              <label className="playback-speed-label">Playback Speed:</label>
-              <select
-                className="playback-speed-select"
-                onChange={this.handleSpeedChange}
-                value={playbackSpeed}
-              >
-                <option value={1.0}>Normal</option>
-                <option value={0.5}>Half Speed</option>
-                <option value={1.5}>1.5x Speed</option>
-                <option value={2.0}>Double Speed</option>
-              </select>
-            </div>
-            <div className="undo-button">
-              {/* Undo button */}
-              <button onClick={this.undoLastClip}>Undo</button>
-            </div>
+          {/* Playback controls */}
+          <div
+            className="playback-controls"
+            onDragOver={(e) => e.preventDefault()} // Allow dropping on this element
+            onDrop={this.handleDropInTimeline} // Handle drop event in timeline
+          >
+            <button onClick={this.playTimeline}>Play Timeline</button>
           </div>
 
+          {/* Playback speed dropdown */}
+          <div className="playback-speed">
+            <label className="playback-speed-label">Playback Speed:</label>
+            <select
+              className="playback-speed-select"
+              onChange={this.handleSpeedChange}
+              value={playbackSpeed}
+            >
+              <option value={1.0}>Normal</option>
+              <option value={0.5}>Half Speed</option>
+              <option value={1.5}>1.5x Speed</option>
+              <option value={2.0}>Double Speed</option>
+            </select>
+          </div>
+
+          {/* Undo button */}
+          <div className="undo-button">
+            <button onClick={this.undoLastClip}>Undo</button>
+          </div>
+        </div>
           <SoundLibrary addClipToTimeline={this.addClipToTimeline} />
 
-          {/* Timeline Clips */}
-          <div className="timeline-clips">
+          {/* Timeline Area */}
+          <div
+            className="timeline"
+            onDragOver={(e) => e.preventDefault()} // Allow dropping on this element
+            onDrop={this.handleDropInTimeline} // Handle drop event in timeline
+          >
             {timelineClips.map((clip, index) => (
               <div key={index} className="timeline-clip">
                 {clip.label}
