@@ -141,6 +141,7 @@ class Track extends Component {
             onDragOver={(e) => e.preventDefault()} // Allow dropping on this element
             onDrop={this.handleDropInTimeline} // Handle drop event in timeline
           >
+            Timeline:
             {timelineClips.map((clip, index) => (
               <div key={index} className="timeline-clip">
                 {clip.label}
