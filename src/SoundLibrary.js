@@ -15,6 +15,7 @@ import BassSynth from "./Test sound/bass-synth.wav";
 import HardSweep from "./Test sound/hardsweep2.wav";
 import Organ from "./Test sound/organ.wav";
 import Metal from "./Test sound/metal.wav";
+import Bass from "./Test sound/808-bass.wav";
 
 const pianoClips = [
     { sound: A3, label: 'Piano A3' },
@@ -30,7 +31,8 @@ const pianoClips = [
     { sound: BassSynth, label: 'Bass Synth'},
     { sound: HardSweep, label: 'Hard Sweep'},
     { sound: Organ, label: 'Organ'},
-    { sound: Metal, label: 'Metal'}
+    { sound: Metal, label: 'Metal'},
+    { sound: Bass, label: '808-Bass'}
 ];
 
 class SoundLibrary extends Component {
