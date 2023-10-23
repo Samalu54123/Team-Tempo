@@ -17,13 +17,13 @@ import Organ from "./Test sound/organ.wav";
 import Metal from "./Test sound/metal.wav";
 
 const pianoClips = [
-    { sound: A3, label: 'piano A3' },
-    { sound: B3, label: 'B3' },
-    { sound: C3, label: 'C3' },
-    { sound: D3, label: 'D3' },
-    { sound: E3, label: 'E3' },
-    { sound: F3, label: 'F3' },
-    { sound: G3, label: 'G3' },
+    { sound: A3, label: 'Piano A3' },
+    { sound: B3, label: 'Piano B3' },
+    { sound: C3, label: 'Piano C3' },
+    { sound: D3, label: 'Piano D3' },
+    { sound: E3, label: 'Piano E3' },
+    { sound: F3, label: 'Piano F3' },
+    { sound: G3, label: 'Piano G3' },
     { sound: BasicTone, label: 'Basic Tone'},
     { sound: BasicPowerOn, label: 'Basic PowerOn'},
     { sound: BassRolly, label: 'Bass Rolly'},
