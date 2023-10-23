@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Howl, Howler } from 'howler';
-import * as Tone from 'tone';
+import './Track.css'
 import A3 from "./Test sound/a3.wav";
 import B3 from "./Test sound/b3.wav";
 import C3 from "./Test sound/c3.wav";
@@ -60,22 +60,24 @@ class SoundLibrary extends Component {
         Howler.volume(1.0); // Set the volume for Howler
 
         return (
-            <div className='Sounds'>
+            <div className='Sound-Library'>
                 <h3>Sound Library</h3>
-                {pianoClips.map((soundOBJ, index) => (
-                    <div key={index}>
-                        <button
-                        draggable="true"
-                        onDragStart={(e) => this.handleDragStart(e, soundOBJ)}
-                        onClick={() => this.playSound(soundOBJ.sound)}
-                        >
-                        {soundOBJ.label}
-                        </button>
-                        <button onClick={() => this.addToTimeline(soundOBJ)}>
-                            Add to Timeline
-                        </button>
-                    </div>
-                ))}
+                <div className='Sounds'>
+                    {pianoClips.map((soundOBJ, index) => (
+                        <div key={index}>
+                            <button
+                            draggable="true"
+                            onDragStart={(e) => this.handleDragStart(e, soundOBJ)}
+                            onClick={() => this.playSound(soundOBJ.sound)}
+                            >
+                            {soundOBJ.label}
+                            </button>
+                            <button onClick={() => this.addToTimeline(soundOBJ)}>
+                                Add to Timeline
+                            </button>
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     }
