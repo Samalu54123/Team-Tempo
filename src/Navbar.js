@@ -24,7 +24,7 @@ export default function Navbar() {
         Team Tempo
       </Link>
       <ul>
-        <CustomLink to="/Project">Project</CustomLink>
+        <CustomLink to="/Player">Player</CustomLink>
         <CustomLink to="/Track">Track</CustomLink>
         <CustomLink to="/About">About</CustomLink>
         {/* Sign out button */}
